@@ -1,6 +1,6 @@
 #!/bin/bash
 #Version 1.0.1 from rbetz from 21.04.2022
-#Added SSH Suppression and changed links from ssh to https
+#Added SSH Suppression and changed links from ssh to https#
 
 #Variable Things
 read -p $'\e\033[0;32mInsert the Intra of the Person you are evaluating:\e\033[0m' intra
