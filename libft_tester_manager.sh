@@ -1,17 +1,17 @@
 #!/bin/bash
 #Version 1.0.1 from rbetz from 21.04.2022
-#Added SSH Suppression
+#Added SSH Suppression and changed links from ssh to https
 
 #Variable Things
 read -p $'\e\033[0;32mInsert the Intra of the Person you are evaluating:\e\033[0m' intra
 read -p $'\033[0;32mInsert the link to the git Repo:\033[0m' git
 
 #Constant Things
-unit="git@github.com:alelievr/libft-unit-test.git"
-libtest="git@github.com:Tripouille/libftTester.git"
-war="git@github.com:y3ll0w42/libft-war-machine.git"
-split="git@github.com:Ysoroko/FT_SPLIT_TESTER.git"
-pain="git@github.com:Bluegales/libft-pain.git"
+unit="https://github.com/alelievr/libft-unit-test.git"
+libtest="https://github.com/Tripouille/libftTester.git"
+war="https://github.com/y3ll0w42/libft-war-machine.git"
+split="https://github.com/Ysoroko/FT_SPLIT_TESTER.git"
+pain="https://github.com/Bluegales/libft-pain.git"
 
 #Suppress Fingerprint Messages
 ssh-keygen -F github.com || ssh-keyscan github.com >> ~/.ssh/known_hosts
