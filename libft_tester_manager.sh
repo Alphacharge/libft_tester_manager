@@ -1,5 +1,6 @@
 #!/bin/bash
-#Version 1.0.0 from rbetz from 21.04.2022
+#Version 1.0.1 from rbetz from 21.04.2022
+#Added SSH Suppression
 
 #Variable Things
 read -p $'\e\033[0;32mInsert the Intra of the Person you are evaluating:\e\033[0m' intra
@@ -11,6 +12,9 @@ libtest="git@github.com:Tripouille/libftTester.git"
 war="git@github.com:y3ll0w42/libft-war-machine.git"
 split="git@github.com:Ysoroko/FT_SPLIT_TESTER.git"
 pain="git@github.com:Bluegales/libft-pain.git"
+
+#Suppress Fingerprint Messages
+ssh-keygen -F github.com || ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 #Create Workdir
 mkdir "tmp_eva_$intra"
