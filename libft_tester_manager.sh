@@ -1,5 +1,5 @@
 #!/bin/bash
-#Version 1.0.1 from rbetz from 21.04.2022
+#Version 1.1.0 from rbetz from 26.04.2022
 #Added SSH Suppression and changed links from ssh to https#
 #Added the opportunity to check a specific tester and without new install
 
