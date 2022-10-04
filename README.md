@@ -29,7 +29,6 @@ The Script is cloning now
   - libft-unit-test
   - libft-war-machine
   - libftTester
-  - libft-pain
   - libft-Split-Tester
   - The libft that you want to evaluate
 
