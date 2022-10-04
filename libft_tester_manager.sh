@@ -2,6 +2,7 @@
 #Version 1.1.0 from rbetz from 26.04.2022
 #Added SSH Suppression and changed links from ssh to https#
 #Added the opportunity to check a specific tester and without new install
+#4.10.22 Removed paintester because incompability
 
 #Variable Things
 read -p $'\e\033[0;32mDo you want to install it? (y | n):\e\033[0m' install
@@ -11,7 +12,7 @@ then
 	read -p $'\033[0;32mInsert the link to the git Repo:\033[0m' git
 	tester="all"
 else
-	read -p $'\033[0;32mDo you want a specific test?(empty/all | unit | war | lib | pain | split | norm):\033[0m' tester
+	read -p $'\033[0;32mDo you want a specific test?(empty/all | unit | war | lib | split | norm):\033[0m' tester
 fi
 
 #Constant Things
@@ -19,7 +20,6 @@ unit="https://github.com/alelievr/libft-unit-test.git"
 libtest="https://github.com/Tripouille/libftTester.git"
 war="https://github.com/y3ll0w42/libft-war-machine.git"
 split="https://github.com/Ysoroko/FT_SPLIT_TESTER.git"
-pain="https://github.com/Bluegales/libft-pain.git"
 
 if [[ $install == "y" ]]
 then
@@ -39,7 +39,6 @@ then
 	git clone "$libtest" "libtest"
 	git clone "$war" "war"
 	git clone "$split" "split"
-	git clone "$pain" "pain"
 
 	echo -e '\033[0;32mDone.\033[0m'
 else
@@ -98,26 +97,6 @@ then
 \	\	" libtest/Makefile
 	fi
 	make -C ./libtest/
-	echo -e '\033[0;32mDone.\033[0m'
-fi
-if [[ $tester == "pain" || $tester == "all" || $tester == "" ]]
-then
-	if [[ $install == "y" ]]
-	then
-		read -p $'\033[0;31mPress Enter to continue with pain.\033[0m' x
-		sed -i '' '2d' pain/pain.sh
-		sed -i '' '2d' pain/pain.sh
-		sed -i '' '9d' pain/pain.sh
-		sed -i '.sh' "2i\\
-\	\	LIBFT=../libft_$intra\\
-\	\	" pain/pain.sh
-		sed -i '.sh' "9i\\
-\	\	make -C ../libft_$intra/\\
-\	\	" pain/pain.sh
-	fi
-	cd pain
-	./pain.sh
-	cd ..
 	echo -e '\033[0;32mDone.\033[0m'
 fi
 if [[ $tester == "split" || $tester == "all" || $tester == "" ]]
